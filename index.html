@@ -1,0 +1,753 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Presentation Script Worksheet – GED 100</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap');
+ 
+  :root {
+    --purple: #6c3fd4;
+    --purple-dark: #4f2ca8;
+    --pink: #d63baf;
+    --gradient: linear-gradient(135deg, #6c3fd4 0%, #d63baf 100%);
+    --light-bg: #f6f3ff;
+    --card: #ffffff;
+    --border: #e6d8ff;
+    --text: #1e1035;
+    --muted: #7b6fa0;
+    --intro-color: #6c3fd4;
+    --job-color: #2563eb;
+    --skills-color: #059669;
+    --quals-color: #d97706;
+    --advdis-color: #dc2626;
+    --conclusion-color: #7c3aed;
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--light-bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+ 
+  /* ─── HEADER ─── */
+  .header {
+    background: var(--gradient);
+    padding: 28px 24px 22px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(255,255,255,.15) 0%, transparent 60%);
+  }
+  .header-inner { position: relative; z-index: 1; }
+  .header h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.7rem; font-weight: 700; color: #fff;
+    letter-spacing: -0.5px;
+  }
+  .header h1 span { opacity: .75; }
+  .header-sub { color: rgba(255,255,255,.85); font-size: .83rem; margin-top: 4px; }
+  .header-badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 10px; }
+  .hbadge {
+    background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.35);
+    color: #fff; border-radius: 20px; padding: 3px 13px; font-size: .71rem; font-weight: 700;
+    letter-spacing: .4px;
+  }
+ 
+  /* ─── STUDENT INFO ─── */
+  .student-card {
+    max-width: 860px; margin: 20px auto 0; padding: 0 16px;
+  }
+  .info-box {
+    background: var(--card); border: 2px solid var(--border);
+    border-radius: 16px; padding: 18px 22px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;
+  }
+  .info-field label {
+    display: block; font-size: .72rem; font-weight: 800;
+    color: var(--purple); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 5px;
+  }
+  .info-field input {
+    width: 100%; padding: 9px 13px; border: 2px solid var(--border);
+    border-radius: 10px; font-family: 'Nunito', sans-serif; font-size: .9rem;
+    color: var(--text); background: var(--light-bg); outline: none; transition: border .2s;
+  }
+  .info-field input:focus { border-color: var(--purple); }
+ 
+  /* ─── TIMING OVERVIEW ─── */
+  .timing-strip {
+    max-width: 860px; margin: 14px auto 0; padding: 0 16px;
+    display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto;
+  }
+  .timing-chip {
+    flex: 1; min-width: 100px; border-radius: 10px; padding: 8px 10px; text-align: center;
+    font-size: .7rem; font-weight: 800; color: #fff; white-space: nowrap;
+  }
+  .tc1 { background: var(--intro-color); }
+  .tc2 { background: var(--job-color); }
+  .tc3 { background: var(--skills-color); }
+  .tc4 { background: var(--quals-color); }
+  .tc5 { background: var(--advdis-color); }
+  .tc6 { background: var(--conclusion-color); }
+  .timing-chip .chip-time { font-size: .65rem; font-weight: 700; opacity: .85; margin-top: 2px; }
+ 
+  /* ─── INSTRUCTIONS ─── */
+  .instructions {
+    max-width: 860px; margin: 14px auto 0; padding: 0 16px;
+  }
+  .instr-box {
+    background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 10px;
+    padding: 12px 16px; font-size: .82rem; color: #78350f;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .instr-box strong { display: block; margin-bottom: 3px; font-size: .85rem; }
+ 
+  /* ─── SECTION CARDS ─── */
+  .sections { max-width: 860px; margin: 16px auto 0; padding: 0 16px 24px; }
+ 
+  .section-card {
+    background: var(--card); border-radius: 16px; margin-bottom: 16px;
+    border: 2px solid var(--border); overflow: hidden;
+    box-shadow: 0 2px 12px rgba(108,63,212,.06);
+  }
+ 
+  .section-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 20px; border-bottom: 2px solid var(--border);
+  }
+  .sec-num {
+    width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-weight: 900; font-size: .95rem; color: #fff; flex-shrink: 0;
+  }
+  .sec-title-wrap { flex: 1; }
+  .sec-title { font-size: 1.05rem; font-weight: 800; }
+  .sec-subtitle { font-size: .74rem; color: var(--muted); margin-top: 1px; font-weight: 600; }
+  .sec-time {
+    background: var(--light-bg); border-radius: 8px; padding: 4px 11px;
+    font-size: .72rem; font-weight: 800; color: var(--purple);
+    white-space: nowrap;
+  }
+ 
+  .section-body { padding: 16px 20px; }
+ 
+  /* Sentence starters */
+  .starters-label {
+    font-size: .72rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: .5px; color: var(--muted); margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .starters-grid {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
+  }
+  .starter-chip {
+    background: var(--light-bg); border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 5px 11px; font-size: .77rem; color: var(--purple); font-weight: 700;
+    cursor: pointer; transition: all .15s; user-select: none;
+  }
+  .starter-chip:hover { background: var(--purple); color: #fff; border-color: var(--purple); }
+  .starter-chip:active { transform: scale(.96); }
+ 
+  /* Script textarea */
+  .script-label {
+    font-size: .72rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: .5px; color: var(--muted); margin-bottom: 7px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .word-count { font-size: .72rem; font-weight: 700; color: var(--purple); }
+  .script-area {
+    width: 100%; min-height: 120px; padding: 12px 14px;
+    border: 2px solid var(--border); border-radius: 12px;
+    font-family: 'Nunito', sans-serif; font-size: .92rem; line-height: 1.65;
+    color: var(--text); background: var(--light-bg); resize: vertical;
+    outline: none; transition: border .2s;
+  }
+  .script-area:focus { border-color: var(--purple); background: #fff; }
+  .script-area::placeholder { color: #b0a0d8; }
+ 
+  .tip-row {
+    margin-top: 10px; background: var(--light-bg); border-radius: 10px;
+    padding: 9px 13px; font-size: .78rem; color: var(--muted); font-weight: 600;
+    border-left: 3px solid var(--border);
+  }
+  .tip-row strong { color: var(--purple); }
+ 
+  /* ─── TOTALS BAR ─── */
+  .totals-bar {
+    max-width: 860px; margin: 0 auto 14px; padding: 0 16px;
+  }
+  .totals-inner {
+    background: var(--gradient); border-radius: 14px; padding: 14px 22px;
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    color: #fff;
+  }
+  .totals-label { font-size: .8rem; font-weight: 700; opacity: .85; }
+  .totals-number { font-size: 1.5rem; font-weight: 900; }
+  .totals-sub { font-size: .7rem; opacity: .75; }
+  .progress-outer { flex: 1; min-width: 120px; background: rgba(255,255,255,.25); border-radius: 99px; height: 10px; }
+  .progress-inner { height: 10px; border-radius: 99px; background: #fff; transition: width .3s; }
+ 
+  /* ─── SELF-CHECK ─── */
+  .selfcheck {
+    max-width: 860px; margin: 0 auto 14px; padding: 0 16px;
+  }
+  .selfcheck-card {
+    background: var(--card); border: 2px solid var(--border); border-radius: 16px; padding: 18px 22px;
+  }
+  .selfcheck-title {
+    font-size: 1rem; font-weight: 800; color: var(--purple); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .check-item {
+    display: flex; align-items: center; gap: 9px; cursor: pointer;
+    padding: 9px 12px; border-radius: 10px; border: 2px solid var(--border);
+    transition: all .15s; font-size: .83rem; font-weight: 600;
+    background: var(--light-bg);
+  }
+  .check-item input[type="checkbox"] { display: none; }
+  .check-box {
+    width: 20px; height: 20px; border: 2px solid #c4b0f0; border-radius: 6px;
+    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    background: #fff; transition: all .15s;
+  }
+  .check-item.checked .check-box { background: var(--purple); border-color: var(--purple); }
+  .check-item.checked .check-box::after { content: '✓'; color: #fff; font-size: .75rem; font-weight: 900; }
+  .check-item.checked { border-color: var(--purple); background: #f0ebff; color: var(--purple); }
+ 
+  /* ─── ACTIONS ─── */
+  .actions {
+    max-width: 860px; margin: 0 auto 30px; padding: 0 16px;
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .btn {
+    padding: 11px 24px; border-radius: 12px; border: none; font-family: 'Nunito', sans-serif;
+    font-weight: 800; font-size: .87rem; cursor: pointer; transition: all .2s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .btn-primary { background: var(--gradient); color: #fff; }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(108,63,212,.35); }
+  .btn-secondary { background: #fff; color: var(--purple); border: 2px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--purple); }
+  .btn-danger { background: #fff; color: #dc2626; border: 2px solid #fecaca; }
+  .btn-danger:hover { background: #fef2f2; }
+ 
+  /* ─── TOAST ─── */
+  .toast {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(30px);
+    background: #1e1035; color: #fff; padding: 10px 22px; border-radius: 99px;
+    font-size: .82rem; font-weight: 700; opacity: 0; transition: all .3s; z-index: 9999;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+ 
+  /* ─── PRINT ─── */
+  @media print {
+    body { background: #fff; }
+    .actions, .btn, .starter-chip, .toast { display: none !important; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section-card { break-inside: avoid; }
+    .script-area { border: 1px solid #ccc; background: #fff; min-height: 100px; }
+    .timing-chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sec-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .totals-inner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+ 
+  @media (max-width: 600px) {
+    .info-box { grid-template-columns: 1fr 1fr; }
+    .check-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.35rem; }
+  }
+ 
+  /* Section colour theming */
+  .s1 .sec-num, .s1 .starter-chip:hover { background: var(--intro-color); border-color: var(--intro-color); }
+  .s1 .sec-title, .s1 .word-count { color: var(--intro-color); }
+  .s1 .script-area:focus { border-color: var(--intro-color); }
+  .s1 .tip-row { border-left-color: var(--intro-color); }
+  .s1 .starter-chip:hover { background: var(--intro-color); }
+ 
+  .s2 .sec-num { background: var(--job-color); }
+  .s2 .sec-title, .s2 .word-count { color: var(--job-color); }
+  .s2 .script-area:focus { border-color: var(--job-color); }
+  .s2 .tip-row { border-left-color: var(--job-color); }
+  .s2 .starter-chip:hover { background: var(--job-color); border-color: var(--job-color); }
+ 
+  .s3 .sec-num { background: var(--skills-color); }
+  .s3 .sec-title, .s3 .word-count { color: var(--skills-color); }
+  .s3 .script-area:focus { border-color: var(--skills-color); }
+  .s3 .tip-row { border-left-color: var(--skills-color); }
+  .s3 .starter-chip:hover { background: var(--skills-color); border-color: var(--skills-color); }
+ 
+  .s4 .sec-num { background: var(--quals-color); }
+  .s4 .sec-title, .s4 .word-count { color: var(--quals-color); }
+  .s4 .script-area:focus { border-color: var(--quals-color); }
+  .s4 .tip-row { border-left-color: var(--quals-color); }
+  .s4 .starter-chip:hover { background: var(--quals-color); border-color: var(--quals-color); }
+ 
+  .s5 .sec-num { background: var(--advdis-color); }
+  .s5 .sec-title, .s5 .word-count { color: var(--advdis-color); }
+  .s5 .script-area:focus { border-color: var(--advdis-color); }
+  .s5 .tip-row { border-left-color: var(--advdis-color); }
+  .s5 .starter-chip:hover { background: var(--advdis-color); border-color: var(--advdis-color); }
+ 
+  .s6 .sec-num { background: var(--conclusion-color); }
+  .s6 .sec-title, .s6 .word-count { color: var(--conclusion-color); }
+  .s6 .script-area:focus { border-color: var(--conclusion-color); }
+  .s6 .tip-row { border-left-color: var(--conclusion-color); }
+  .s6 .starter-chip:hover { background: var(--conclusion-color); border-color: var(--conclusion-color); }
+</style>
+</head>
+<body>
+ 
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <h1>🎤 Career Presentation <span>Script</span> Worksheet</h1>
+    <div class="header-sub">Write your full presentation script – section by section</div>
+    <div class="header-badges">
+      <span class="hbadge">✨ GED 100</span>
+      <span class="hbadge">⏱ 4 Minutes</span>
+      <span class="hbadge">📝 A2+ Level</span>
+      <span class="hbadge">👩‍🏫 Designed by N. Motahari</span>
+    </div>
+  </div>
+</div>
+ 
+<!-- STUDENT INFO -->
+<div class="student-card">
+  <div class="info-box">
+    <div class="info-field">
+      <label>👤 Your Full Name</label>
+      <input type="text" id="studentName" placeholder="e.g. Fatima Al Mansoori">
+    </div>
+    <div class="info-field">
+      <label>🎯 Career Topic</label>
+      <input type="text" id="careerTopic" placeholder="e.g. Software Engineer">
+    </div>
+    <div class="info-field">
+      <label>📅 Date</label>
+      <input type="text" id="dateField" placeholder="e.g. 8 April 2026">
+    </div>
+  </div>
+</div>
+ 
+<!-- TIMING OVERVIEW -->
+<div class="timing-strip">
+  <div class="timing-chip tc1">🟣 Introduction<div class="chip-time">0:00 – 0:30</div></div>
+  <div class="timing-chip tc2">🔵 Job Description<div class="chip-time">0:30 – 1:30</div></div>
+  <div class="timing-chip tc3">🟢 Skills Needed<div class="chip-time">1:30 – 2:15</div></div>
+  <div class="timing-chip tc4">🟡 Qualifications<div class="chip-time">2:15 – 3:00</div></div>
+  <div class="timing-chip tc5">🔴 Advantages & Disadv.<div class="chip-time">3:00 – 3:30</div></div>
+  <div class="timing-chip tc6">🟣 Conclusion<div class="chip-time">3:30 – 4:00</div></div>
+</div>
+ 
+<!-- INSTRUCTIONS -->
+<div class="instructions">
+  <div class="instr-box">
+    <span style="font-size:1.3rem">💡</span>
+    <div>
+      <strong>How to use this worksheet</strong>
+      Click any 💬 sentence starter to add it to your script. Then finish the sentence in your own words. Try to write 2–4 sentences for each section. When you're done, save your script or print it!
+    </div>
+  </div>
+</div>
+ 
+<!-- ─── SECTION 1: INTRODUCTION ─── -->
+<div class="sections">
+ 
+  <div class="section-card s1">
+    <div class="section-header">
+      <div class="sec-num">1</div>
+      <div class="sec-title-wrap">
+        <div class="sec-title">Introduction</div>
+        <div class="sec-subtitle">Say hello, your name, and introduce your career topic with a hook</div>
+      </div>
+      <div class="sec-time">⏱ 0:00 – 0:30</div>
+    </div>
+    <div class="section-body">
+      <div class="starters-label">💬 Sentence Starters — click to add</div>
+      <div class="starters-grid" data-target="script1">
+        <div class="starter-chip">Good morning, everyone.</div>
+        <div class="starter-chip">Good afternoon, everyone.</div>
+        <div class="starter-chip">My name is ...</div>
+        <div class="starter-chip">Today, I am going to talk about ...</div>
+        <div class="starter-chip">Have you ever thought about becoming a ...?</div>
+        <div class="starter-chip">Do you know what a ... does?</div>
+        <div class="starter-chip">My presentation is about the career of ...</div>
+        <div class="starter-chip">I hope you enjoy my presentation.</div>
+      </div>
+      <div class="script-label">
+        ✍️ Your Script
+        <span class="word-count" id="wc1">0 words</span>
+      </div>
+      <textarea class="script-area" id="script1" placeholder="Start writing your introduction here. Example: Good morning, everyone. My name is Fatima. Today, I am going to talk about the career of a software engineer. Have you ever thought about working with computers? Let me tell you all about it!" oninput="updateWordCount('script1','wc1'); updateTotal()"></textarea>
+      <div class="tip-row">🎯 <strong>Tip:</strong> Start with a hook question to get your audience's attention. Then say your name and topic. Keep it short – only 30 seconds!</div>
+    </div>
+  </div>
+ 
+  <!-- SECTION 2: JOB DESCRIPTION -->
+  <div class="section-card s2">
+    <div class="section-header">
+      <div class="sec-num">2</div>
+      <div class="sec-title-wrap">
+        <div class="sec-title">Job Description</div>
+        <div class="sec-subtitle">What does a person in this career do every day?</div>
+      </div>
+      <div class="sec-time">⏱ 0:30 – 1:30</div>
+    </div>
+    <div class="section-body">
+      <div class="starters-label">💬 Sentence Starters — click to add</div>
+      <div class="starters-grid" data-target="script2">
+        <div class="starter-chip">A ... is a person who ...</div>
+        <div class="starter-chip">Their main job is to ...</div>
+        <div class="starter-chip">Every day, they ...</div>
+        <div class="starter-chip">They are responsible for ...</div>
+        <div class="starter-chip">They work in ...</div>
+        <div class="starter-chip">They usually work with ...</div>
+        <div class="starter-chip">Their duties include ...</div>
+        <div class="starter-chip">For example, they ...</div>
+        <div class="starter-chip">They also need to ...</div>
+        <div class="starter-chip">Moving on to my next point ...</div>
+      </div>
+      <div class="script-label">
+        ✍️ Your Script
+        <span class="word-count" id="wc2">0 words</span>
+      </div>
+      <textarea class="script-area" id="script2" placeholder="Write about what this person does at work. What are their main tasks and responsibilities?" oninput="updateWordCount('script2','wc2'); updateTotal()"></textarea>
+      <div class="tip-row">🎯 <strong>Tip:</strong> Use simple present verbs: <em>works, manages, helps, creates, designs, checks, reports</em>. Give 3–4 clear duties.</div>
+    </div>
+  </div>
+ 
+  <!-- SECTION 3: SKILLS NEEDED -->
+  <div class="section-card s3">
+    <div class="section-header">
+      <div class="sec-num">3</div>
+      <div class="sec-title-wrap">
+        <div class="sec-title">Skills Needed</div>
+        <div class="sec-subtitle">What abilities and personal qualities does this job require?</div>
+      </div>
+      <div class="sec-time">⏱ 1:30 – 2:15</div>
+    </div>
+    <div class="section-body">
+      <div class="starters-label">💬 Sentence Starters — click to add</div>
+      <div class="starters-grid" data-target="script3">
+        <div class="starter-chip">Now I will talk about the skills needed ...</div>
+        <div class="starter-chip">To be a good ..., you need to ...</div>
+        <div class="starter-chip">One important skill is ...</div>
+        <div class="starter-chip">Another skill is ...</div>
+        <div class="starter-chip">You also need to be ...</div>
+        <div class="starter-chip">It is important to have ...</div>
+        <div class="starter-chip">You must be able to ...</div>
+        <div class="starter-chip">Good communication skills are essential because ...</div>
+        <div class="starter-chip">Problem-solving skills are needed to ...</div>
+      </div>
+      <div class="script-label">
+        ✍️ Your Script
+        <span class="word-count" id="wc3">0 words</span>
+      </div>
+      <textarea class="script-area" id="script3" placeholder="What skills are needed for this job? Think about soft skills (communication, teamwork) and hard skills (technical, computer skills)." oninput="updateWordCount('script3','wc3'); updateTotal()"></textarea>
+      <div class="tip-row">🎯 <strong>Tip:</strong> Name at least 3 skills. Explain WHY each skill is important. Use: <em>You need … because …</em></div>
+    </div>
+  </div>
+ 
+  <!-- SECTION 4: QUALIFICATIONS -->
+  <div class="section-card s4">
+    <div class="section-header">
+      <div class="sec-num">4</div>
+      <div class="sec-title-wrap">
+        <div class="sec-title">Qualifications Needed</div>
+        <div class="sec-subtitle">What education, training, or certificates are required?</div>
+      </div>
+      <div class="sec-time">⏱ 2:15 – 3:00</div>
+    </div>
+    <div class="section-body">
+      <div class="starters-label">💬 Sentence Starters — click to add</div>
+      <div class="starters-grid" data-target="script4">
+        <div class="starter-chip">Next, I will talk about qualifications ...</div>
+        <div class="starter-chip">To become a ..., you need a degree in ...</div>
+        <div class="starter-chip">You must complete ...</div>
+        <div class="starter-chip">Most ... have a Bachelor's degree in ...</div>
+        <div class="starter-chip">A certificate in ... is also helpful.</div>
+        <div class="starter-chip">You usually need ... years of study.</div>
+        <div class="starter-chip">Some jobs require ...</div>
+        <div class="starter-chip">In the UAE, you can study ... at ...</div>
+        <div class="starter-chip">After graduation, you might also need ...</div>
+      </div>
+      <div class="script-label">
+        ✍️ Your Script
+        <span class="word-count" id="wc4">0 words</span>
+      </div>
+      <textarea class="script-area" id="script4" placeholder="What education or training do you need? Name the degree, certificates, or experience required for this career." oninput="updateWordCount('script4','wc4'); updateTotal()"></textarea>
+      <div class="tip-row">🎯 <strong>Tip:</strong> Mention the degree name, how many years of study, and any extra certificates or licences needed.</div>
+    </div>
+  </div>
+ 
+  <!-- SECTION 5: ADVANTAGES & DISADVANTAGES -->
+  <div class="section-card s5">
+    <div class="section-header">
+      <div class="sec-num">5</div>
+      <div class="sec-title-wrap">
+        <div class="sec-title">Advantages &amp; Disadvantages</div>
+        <div class="sec-subtitle">What are the good and bad things about this career?</div>
+      </div>
+      <div class="sec-time">⏱ 3:00 – 3:30</div>
+    </div>
+    <div class="section-body">
+      <div class="starters-label">💬 Advantages — click to add</div>
+      <div class="starters-grid" data-target="script5">
+        <div class="starter-chip">One advantage of this job is ...</div>
+        <div class="starter-chip">Another benefit is ...</div>
+        <div class="starter-chip">This career offers good opportunities because ...</div>
+        <div class="starter-chip">The salary is usually ...</div>
+        <div class="starter-chip">You can also ...</div>
+        <div class="starter-chip">On the other hand, one disadvantage is ...</div>
+        <div class="starter-chip">However, a challenge is ...</div>
+        <div class="starter-chip">Sometimes, it can be difficult to ...</div>
+        <div class="starter-chip">The job can be stressful because ...</div>
+        <div class="starter-chip">Despite this, I think ...</div>
+      </div>
+      <div class="script-label">
+        ✍️ Your Script
+        <span class="word-count" id="wc5">0 words</span>
+      </div>
+      <textarea class="script-area" id="script5" placeholder="Write 2 advantages (good things) and 2 disadvantages (bad things) about this career." oninput="updateWordCount('script5','wc5'); updateTotal()"></textarea>
+      <div class="tip-row">🎯 <strong>Tip:</strong> Use contrast language: <em>On the other hand … / However … / Despite this …</em> to link your ideas.</div>
+    </div>
+  </div>
+ 
+  <!-- SECTION 6: CONCLUSION -->
+  <div class="section-card s6">
+    <div class="section-header">
+      <div class="sec-num">6</div>
+      <div class="sec-title-wrap">
+        <div class="sec-title">Conclusion</div>
+        <div class="sec-subtitle">Summarise your main points and thank your audience</div>
+      </div>
+      <div class="sec-time">⏱ 3:30 – 4:00</div>
+    </div>
+    <div class="section-body">
+      <div class="starters-label">💬 Sentence Starters — click to add</div>
+      <div class="starters-grid" data-target="script6">
+        <div class="starter-chip">To conclude, ...</div>
+        <div class="starter-chip">In summary, ...</div>
+        <div class="starter-chip">To sum up, I have talked about ...</div>
+        <div class="starter-chip">I hope you now understand more about ...</div>
+        <div class="starter-chip">As you can see, this is an interesting career because ...</div>
+        <div class="starter-chip">I personally think this career is ...</div>
+        <div class="starter-chip">If you are interested, you should ...</div>
+        <div class="starter-chip">Thank you for listening.</div>
+        <div class="starter-chip">Are there any questions?</div>
+        <div class="starter-chip">Thank you for your attention.</div>
+      </div>
+      <div class="script-label">
+        ✍️ Your Script
+        <span class="word-count" id="wc6">0 words</span>
+      </div>
+      <textarea class="script-area" id="script6" placeholder="End your presentation with a summary and a thank you. Keep it short – only 30 seconds!" oninput="updateWordCount('script6','wc6'); updateTotal()"></textarea>
+      <div class="tip-row">🎯 <strong>Tip:</strong> Briefly mention all 5 points you covered, give your personal opinion about the career, then end with "Thank you for listening."</div>
+    </div>
+  </div>
+ 
+</div>
+ 
+<!-- TOTALS BAR -->
+<div class="totals-bar">
+  <div class="totals-inner">
+    <div>
+      <div class="totals-label">📊 Total Script</div>
+      <div class="totals-number" id="totalWords">0 <span style="font-size:.9rem;font-weight:600">words</span></div>
+      <div class="totals-sub">Target: 280–360 words for 4 min</div>
+    </div>
+    <div class="progress-outer">
+      <div class="progress-inner" id="totalBar" style="width:0%"></div>
+    </div>
+    <div>
+      <div class="totals-label">📈 Progress</div>
+      <div class="totals-number" id="totalPct">0<span style="font-size:.9rem;font-weight:600">%</span></div>
+      <div class="totals-sub">of target</div>
+    </div>
+  </div>
+</div>
+ 
+<!-- SELF-CHECK -->
+<div class="selfcheck">
+  <div class="selfcheck-card">
+    <div class="selfcheck-title">✅ Before You Present – Self-Check</div>
+    <div class="check-grid">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        I have an introduction with a hook question
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        I described the job duties clearly
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        I mentioned at least 3 skills with reasons
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        I explained the qualifications needed
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        I gave 2 advantages and 2 disadvantages
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        I have a proper conclusion and thank you
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        I used linking words (firstly, however, in conclusion…)
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        I practised and my timing is about 4 minutes
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- ACTION BUTTONS -->
+<div class="actions">
+  <button class="btn btn-primary" onclick="saveScript()">💾 Save Script (JSON)</button>
+  <button class="btn btn-secondary" onclick="loadScript()">📂 Load Script</button>
+  <button class="btn btn-secondary" onclick="window.print()">🖨️ Print / Save PDF</button>
+  <button class="btn btn-danger" onclick="clearAll()">🗑️ Clear All</button>
+  <input type="file" id="loadFile" accept=".json" style="display:none" onchange="handleLoad(event)">
+</div>
+ 
+<div class="toast" id="toast"></div>
+ 
+<script>
+  // Sentence starter chips → append to textarea
+  document.querySelectorAll('.starters-grid').forEach(grid => {
+    const targetId = grid.dataset.target;
+    grid.querySelectorAll('.starter-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const ta = document.getElementById(targetId);
+        const starter = chip.textContent;
+        if (ta.value && !ta.value.endsWith(' ') && !ta.value.endsWith('\n')) {
+          ta.value += ' ';
+        }
+        ta.value += starter + ' ';
+        ta.focus();
+        updateWordCount(targetId, 'wc' + targetId.replace('script',''));
+        updateTotal();
+        showToast('✅ Sentence starter added!');
+      });
+    });
+  });
+ 
+  // Word count
+  function countWords(text) {
+    return text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+  }
+  function updateWordCount(textareaId, counterId) {
+    const words = countWords(document.getElementById(textareaId).value);
+    document.getElementById(counterId).textContent = words + ' word' + (words !== 1 ? 's' : '');
+  }
+ 
+  // Total words
+  const TARGET = 320;
+  function updateTotal() {
+    let total = 0;
+    for (let i = 1; i <= 6; i++) {
+      total += countWords(document.getElementById('script' + i).value);
+    }
+    document.getElementById('totalWords').innerHTML = total + ' <span style="font-size:.9rem;font-weight:600">words</span>';
+    const pct = Math.min(100, Math.round(total / TARGET * 100));
+    document.getElementById('totalPct').innerHTML = pct + '<span style="font-size:.9rem;font-weight:600">%</span>';
+    document.getElementById('totalBar').style.width = pct + '%';
+  }
+ 
+  // Self-check toggle
+  function toggleCheck(item) {
+    item.classList.toggle('checked');
+  }
+ 
+  // Save
+  function saveScript() {
+    const data = {
+      studentName: document.getElementById('studentName').value,
+      careerTopic: document.getElementById('careerTopic').value,
+      dateField: document.getElementById('dateField').value,
+      scripts: {}
+    };
+    for (let i = 1; i <= 6; i++) {
+      data.scripts['section' + i] = document.getElementById('script' + i).value;
+    }
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    const name = data.studentName.replace(/\s+/g, '_') || 'student';
+    a.download = `Career_Script_${name}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('✅ Script saved!');
+  }
+ 
+  // Load
+  function loadScript() { document.getElementById('loadFile').click(); }
+  function handleLoad(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        document.getElementById('studentName').value = data.studentName || '';
+        document.getElementById('careerTopic').value = data.careerTopic || '';
+        document.getElementById('dateField').value = data.dateField || '';
+        for (let i = 1; i <= 6; i++) {
+          const ta = document.getElementById('script' + i);
+          ta.value = (data.scripts && data.scripts['section' + i]) || '';
+          updateWordCount('script' + i, 'wc' + i);
+        }
+        updateTotal();
+        showToast('✅ Script loaded!');
+      } catch {
+        showToast('❌ Error loading file.');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  }
+ 
+  // Clear
+  function clearAll() {
+    if (!confirm('Clear all your script? This cannot be undone.')) return;
+    ['studentName','careerTopic','dateField'].forEach(id => document.getElementById(id).value = '');
+    for (let i = 1; i <= 6; i++) {
+      document.getElementById('script' + i).value = '';
+      updateWordCount('script' + i, 'wc' + i);
+    }
+    updateTotal();
+    document.querySelectorAll('.check-item').forEach(el => el.classList.remove('checked'));
+    showToast('🗑️ Cleared!');
+  }
+ 
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  }
+ 
+  // Auto-set today's date
+  document.getElementById('dateField').value = new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
+</script>
+</body>
+</html>
+ 
